@@ -251,5 +251,12 @@ namespace ZeroDowntime
             }
 
         }
+
+        private void btnClearError_Click_1(object sender, EventArgs e)
+        {
+            iError = 0;
+            txtLastError.Text = "";
+            txtError.Text = iError.ToString();
+        }
     }
 }

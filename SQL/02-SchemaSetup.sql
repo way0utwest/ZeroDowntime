@@ -290,7 +290,8 @@ GO
 CREATE OR ALTER PROCEDURE dbo.AddNewOrder
 AS
 BEGIN
-    DECLARE @custid int
+    DECLARE @orderid INT
+	, @custid int
 	, @orderdate DATETIME
 	, @shipdate datetime
 	SELECT TOP 1 @custid = c.CustomerID FROM dbo.Customer AS c ORDER BY NEWID()
@@ -300,6 +301,8 @@ BEGIN
 	  (CustomerID, OrderDate, ShipDate)
 	VALUES
 	  (@custid, @orderdate, @shipdate)
+	SELECT @orderid = SCOPE_IDENTITY()
+	SELECT @orderid AS OrderID, @custid AS CustomerID, @orderdate AS OrderDate, @shipdate AS ShipDate
 END
 GO
 GRANT EXECUTE ON dbo.AddNewOrder TO ClientApp

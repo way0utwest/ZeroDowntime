@@ -5,12 +5,6 @@ Rename a column and rename a table
 
 This script contains multiple items, each of which may need to be deployed separately
 
-Deployment 1
-
-Deployment 2
-
-Deployment 3
-
 Copyright 2022 Steve Jones
 */
 

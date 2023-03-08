@@ -60,6 +60,7 @@
             this.txtAudit = new System.Windows.Forms.TextBox();
             this.btnRename = new System.Windows.Forms.Button();
             this.txtRename = new System.Windows.Forms.TextBox();
+            this.btnClearError = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grpAppState.SuspendLayout();
             this.SuspendLayout();
@@ -198,10 +199,10 @@
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(19, 191);
+            this.txtLog.Location = new System.Drawing.Point(15, 196);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(997, 224);
+            this.txtLog.Size = new System.Drawing.Size(997, 432);
             this.txtLog.TabIndex = 161;
             // 
             // btnStop
@@ -216,7 +217,7 @@
             // 
             // btnSplitName
             // 
-            this.btnSplitName.Location = new System.Drawing.Point(452, 89);
+            this.btnSplitName.Location = new System.Drawing.Point(327, 97);
             this.btnSplitName.Name = "btnSplitName";
             this.btnSplitName.Size = new System.Drawing.Size(115, 26);
             this.btnSplitName.TabIndex = 163;
@@ -242,7 +243,7 @@
             // 
             // txtSplit
             // 
-            this.txtSplit.Location = new System.Drawing.Point(583, 92);
+            this.txtSplit.Location = new System.Drawing.Point(452, 102);
             this.txtSplit.Name = "txtSplit";
             this.txtSplit.Size = new System.Drawing.Size(64, 20);
             this.txtSplit.TabIndex = 166;
@@ -333,7 +334,7 @@
             // 
             // btnAudit
             // 
-            this.btnAudit.Location = new System.Drawing.Point(452, 57);
+            this.btnAudit.Location = new System.Drawing.Point(327, 65);
             this.btnAudit.Name = "btnAudit";
             this.btnAudit.Size = new System.Drawing.Size(115, 26);
             this.btnAudit.TabIndex = 1002;
@@ -343,14 +344,14 @@
             // 
             // txtAudit
             // 
-            this.txtAudit.Location = new System.Drawing.Point(583, 60);
+            this.txtAudit.Location = new System.Drawing.Point(452, 70);
             this.txtAudit.Name = "txtAudit";
             this.txtAudit.Size = new System.Drawing.Size(64, 20);
             this.txtAudit.TabIndex = 1003;
             // 
             // btnRename
             // 
-            this.btnRename.Location = new System.Drawing.Point(452, 123);
+            this.btnRename.Location = new System.Drawing.Point(327, 131);
             this.btnRename.Name = "btnRename";
             this.btnRename.Size = new System.Drawing.Size(115, 26);
             this.btnRename.TabIndex = 1004;
@@ -360,16 +361,27 @@
             // 
             // txtRename
             // 
-            this.txtRename.Location = new System.Drawing.Point(583, 124);
+            this.txtRename.Location = new System.Drawing.Point(452, 135);
             this.txtRename.Name = "txtRename";
             this.txtRename.Size = new System.Drawing.Size(64, 20);
             this.txtRename.TabIndex = 1005;
+            // 
+            // btnClearError
+            // 
+            this.btnClearError.Location = new System.Drawing.Point(567, 66);
+            this.btnClearError.Name = "btnClearError";
+            this.btnClearError.Size = new System.Drawing.Size(115, 26);
+            this.btnClearError.TabIndex = 1006;
+            this.btnClearError.Text = "Clear Errors";
+            this.btnClearError.UseVisualStyleBackColor = true;
+            this.btnClearError.Click += new System.EventHandler(this.btnClearError_Click_1);
             // 
             // frmZeroDowntime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 427);
+            this.ClientSize = new System.Drawing.Size(1025, 640);
+            this.Controls.Add(this.btnClearError);
             this.Controls.Add(this.txtRename);
             this.Controls.Add(this.btnRename);
             this.Controls.Add(this.txtAudit);
@@ -429,6 +441,7 @@
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label lblLastError;
         private System.Windows.Forms.TextBox txtLastError;
+        private System.Windows.Forms.Button btnClearError;
     }
 }
 
