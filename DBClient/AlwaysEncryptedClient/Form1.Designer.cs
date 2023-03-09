@@ -61,6 +61,14 @@
             this.btnRename = new System.Windows.Forms.Button();
             this.txtRename = new System.Windows.Forms.TextBox();
             this.btnClearError = new System.Windows.Forms.Button();
+            this.btnProc = new System.Windows.Forms.Button();
+            this.txtProc = new System.Windows.Forms.TextBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtStart = new System.Windows.Forms.TextBox();
+            this.txtEnd = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.grpAppState.SuspendLayout();
             this.SuspendLayout();
@@ -217,7 +225,7 @@
             // 
             // btnSplitName
             // 
-            this.btnSplitName.Location = new System.Drawing.Point(327, 97);
+            this.btnSplitName.Location = new System.Drawing.Point(327, 67);
             this.btnSplitName.Name = "btnSplitName";
             this.btnSplitName.Size = new System.Drawing.Size(115, 26);
             this.btnSplitName.TabIndex = 163;
@@ -243,7 +251,7 @@
             // 
             // txtSplit
             // 
-            this.txtSplit.Location = new System.Drawing.Point(452, 102);
+            this.txtSplit.Location = new System.Drawing.Point(452, 72);
             this.txtSplit.Name = "txtSplit";
             this.txtSplit.Size = new System.Drawing.Size(64, 20);
             this.txtSplit.TabIndex = 166;
@@ -334,7 +342,7 @@
             // 
             // btnAudit
             // 
-            this.btnAudit.Location = new System.Drawing.Point(327, 65);
+            this.btnAudit.Location = new System.Drawing.Point(327, 98);
             this.btnAudit.Name = "btnAudit";
             this.btnAudit.Size = new System.Drawing.Size(115, 26);
             this.btnAudit.TabIndex = 1002;
@@ -344,7 +352,7 @@
             // 
             // txtAudit
             // 
-            this.txtAudit.Location = new System.Drawing.Point(452, 70);
+            this.txtAudit.Location = new System.Drawing.Point(452, 104);
             this.txtAudit.Name = "txtAudit";
             this.txtAudit.Size = new System.Drawing.Size(64, 20);
             this.txtAudit.TabIndex = 1003;
@@ -376,11 +384,89 @@
             this.btnClearError.UseVisualStyleBackColor = true;
             this.btnClearError.Click += new System.EventHandler(this.btnClearError_Click_1);
             // 
+            // btnProc
+            // 
+            this.btnProc.Location = new System.Drawing.Point(327, 163);
+            this.btnProc.Name = "btnProc";
+            this.btnProc.Size = new System.Drawing.Size(115, 26);
+            this.btnProc.TabIndex = 1007;
+            this.btnProc.Text = "Proc";
+            this.btnProc.UseVisualStyleBackColor = true;
+            this.btnProc.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // txtProc
+            // 
+            this.txtProc.Location = new System.Drawing.Point(452, 167);
+            this.txtProc.Name = "txtProc";
+            this.txtProc.Size = new System.Drawing.Size(64, 20);
+            this.txtProc.TabIndex = 1008;
+            this.txtProc.Text = "Using Year";
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(688, 107);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(72, 20);
+            this.txtYear.TabIndex = 1009;
+            this.txtYear.Text = "2023";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(620, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.TabIndex = 174;
+            this.label6.Text = "Year Param";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(622, 135);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.TabIndex = 1010;
+            this.label8.Text = "StartDate";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(622, 159);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 13);
+            this.label9.TabIndex = 1011;
+            this.label9.Text = "EndDate";
+            // 
+            // txtStart
+            // 
+            this.txtStart.Location = new System.Drawing.Point(688, 133);
+            this.txtStart.Name = "txtStart";
+            this.txtStart.Size = new System.Drawing.Size(72, 20);
+            this.txtStart.TabIndex = 1012;
+            this.txtStart.Text = "1996/01/01";
+            // 
+            // txtEnd
+            // 
+            this.txtEnd.Location = new System.Drawing.Point(688, 159);
+            this.txtEnd.Name = "txtEnd";
+            this.txtEnd.Size = new System.Drawing.Size(72, 20);
+            this.txtEnd.TabIndex = 1013;
+            this.txtEnd.Text = "1997/01/01";
+            // 
             // frmZeroDowntime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 640);
+            this.Controls.Add(this.txtEnd);
+            this.Controls.Add(this.txtStart);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtYear);
+            this.Controls.Add(this.txtProc);
+            this.Controls.Add(this.btnProc);
             this.Controls.Add(this.btnClearError);
             this.Controls.Add(this.txtRename);
             this.Controls.Add(this.btnRename);
@@ -442,6 +528,14 @@
         private System.Windows.Forms.Label lblLastError;
         private System.Windows.Forms.TextBox txtLastError;
         private System.Windows.Forms.Button btnClearError;
+        private System.Windows.Forms.Button btnProc;
+        private System.Windows.Forms.TextBox txtProc;
+        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtStart;
+        private System.Windows.Forms.TextBox txtEnd;
     }
 }
 

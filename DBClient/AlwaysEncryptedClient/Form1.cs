@@ -19,6 +19,7 @@ namespace ZeroDowntime
         public int iAudit = 0;
         public int iRename = 0;
         public int iError = 0;
+        public int iProc = 0;
 
         public frmZeroDowntime()
         {
@@ -35,6 +36,7 @@ namespace ZeroDowntime
             txtAudit.Text = "Off";
             txtSplit.Text = "Off";
             txtRename.Text = "Off";
+            txtProc.Text = "O";
             txtError.Text = iError.ToString();
         }
 
@@ -86,9 +88,13 @@ namespace ZeroDowntime
 
             while (iRunQuery > 0)
             {
-                num = rnd.Next(1, 20);
+                num = rnd.Next(1, 21);
                 txtRandom.Text = num.ToString();
-                if (num == 18) {
+                if (num == 20)
+                {
+                    strProcedureName = "dbo.SalesReport";
+                }
+                if (num == 19) {
                     strProcedureName = "dbo.AddNewCustomer";
                 }
                 if ((num >= 14) && (num <= 18))
@@ -104,6 +110,31 @@ namespace ZeroDowntime
                     {
                     using (SqlCommand cmd = new SqlCommand(strProcedureName, con))
                     {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        if (strProcedureName == "dbo.SalesReport")
+                        {
+                            switch (iProc)
+                            {
+                                case 0:
+                                    cmd.Parameters.Add("@year", SqlDbType.Int).Value = Convert.ToInt32(txtYear.Text);
+                                    break;
+                                case 1:
+                                    cmd.Parameters.Add("@year", SqlDbType.Int).Value = Convert.ToInt32(txtYear.Text);
+                                    cmd.Parameters.Add("@start", SqlDbType.DateTime).Value = DBNull.Value;
+                                    cmd.Parameters.Add("@end", SqlDbType.DateTime).Value = DBNull.Value;
+                                    break;
+                                case 2:
+                                    cmd.Parameters.Add("@year", SqlDbType.Int).Value = DBNull.Value;
+                                    cmd.Parameters.Add("@start", SqlDbType.DateTime).Value = DateTime.Parse(txtStart.Text);
+                                    cmd.Parameters.Add("@end", SqlDbType.DateTime).Value = DateTime.Parse(txtEnd.Text);
+                                    break;
+                                case 3:
+                                    cmd.Parameters.Add("@start", SqlDbType.DateTime).Value = DateTime.Parse(txtStart.Text);
+                                    cmd.Parameters.Add("@end", SqlDbType.DateTime).Value = DateTime.Parse(txtEnd.Text);
+                                    break;
+                            }
+                        }
                         //SqlParameter ln = new SqlParameter("@CustomerID", SqlDbType.Int, 32);
                         //ln.Value = txtCustID.Text;
                         //cmd.Parameters.Add(ln);
@@ -140,10 +171,22 @@ namespace ZeroDowntime
                                 {
                                     strMessage += dataTable.Rows[0]["FirstName"] + " " + dataTable.Rows[0]["LastName"];
                                 }
+                                if (iAudit == 1)
+                                {
+                                    strMessage += " | AuditDate:" + dataTable.Rows[0]["ModifiedDate"];
+                                }
                                 break;
                             case "dbo.AddNewCustomer":
-                                strMessage += "New Cust : "; 
-                                strMessage += dataTable.Rows[0]["CustomerName"] + " | " + dataTable.Rows[0]["Addr"];
+                                strMessage += "New Cust : ";
+                                if (iFeatureSplitName == 0)
+                                {
+                                    strMessage += dataTable.Rows[0]["CustomerName"];
+                                }
+                                else
+                                {
+                                    strMessage += dataTable.Rows[0]["FirstName"] + " " + dataTable.Rows[0]["LastName"];
+                                }
+                                strMessage += " | " + dataTable.Rows[0]["Addr"];
                                 break;
                             case "dbo.AddNewOrder":
                                 strMessage += "New Order: ";
@@ -158,6 +201,10 @@ namespace ZeroDowntime
 
                                 }
                                 strMessage += " |  CustID: " + dataTable.Rows[0]["CustomerID"];
+                                break;
+                            case "dbo.SalesReport":
+                                strMessage += "Sale Count: ";
+                                strMessage += dataTable.Rows[0]["SaleCount"];
                                 break;
                         }
 
@@ -257,6 +304,34 @@ namespace ZeroDowntime
             iError = 0;
             txtLastError.Text = "";
             txtError.Text = iError.ToString();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            switch(iProc)
+            {
+                case 0:
+                    iProc = 1;
+                    txtProc.Text = "Using Year";
+                    break;
+                case 1:
+                    iProc = 2;
+                    txtProc.Text = "Prefer Year";
+                    break;
+                case 2:
+                    iProc = 3;
+                    txtProc.Text = "Prefer date";
+                    break;
+                case 3:
+                    iProc = 0;
+                    txtProc.Text = "Using Date";
+                    break;
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -90,3 +90,11 @@ SELECT o.OrderID
  INNER JOIN  dbo.Customer AS c ON c.CustomerID = o.CustomerID
  where o.OrderID = @orderID
 GO
+
+
+/*
+check the tables
+
+
+select * from customer
+*/

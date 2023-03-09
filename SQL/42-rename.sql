@@ -28,6 +28,7 @@ IF @@ERROR <> 0
 ELSE
 	COMMIT
 GO
+-- remove the column from the code
 ALTER PROCEDURE dbo.GetOrder
 	@OrderID INT 
 AS
@@ -36,13 +37,15 @@ SELECT o.OrderID
      , o.OrderedByDate
      , o.ShipDate
      , c.CustomerID
-     , c.CustomerName
+--     , c.CustomerName
      , c.CustomerAddress
      , c.City
      , c.St
      , c.zip
      , c.FirstName
      , c.LastName
+	 , o.CreateDate
+	 , o.ModifiedDate
  FROM dbo.OrderHeader AS o
  INNER JOIN  dbo.Customer AS c ON c.CustomerID = o.CustomerID
  where o.OrderID = @orderID
@@ -65,7 +68,28 @@ BEGIN
 	SELECT @orderid AS OrderID, @custid AS CustomerID, @orderdate AS OrderedByDate, @shipdate AS ShipDate
 END
 GO
-
+ALTER   PROCEDURE [dbo].[AddNewCustomer]
+AS
+BEGIN
+    DECLARE @firstname VARCHAR(100), @lastname VARCHAR(100)
+	, @Addr VARCHAR(50)
+	, @cityname VARCHAR(30)
+	, @postalcode VARCHAR(5)
+	, @custid int
+	SELECT @firstname = firstname, @lastname = lastname FROM dbo.GetNewName AS gnn
+	SELECT @Addr = gna.Addr FROM dbo.GetNewAddress AS gna
+	SELECT @cityname = CityName FROM dbo.CityName AS cn
+	SELECT @postalcode = gnz.Postalcode FROM dbo.GetNewZip AS gnz
+	INSERT dbo.Customer
+	  (FirstName, LastName, CustomerAddress, City, St, zip)
+	VALUES
+	  (@firstname, @lastname, @Addr, @cityname, 'CO', @postalcode)
+	SELECT @custid = SCOPE_IDENTITY()
+	INSERT dbo.OrderHeader(CustomerID, OrderedByDate, ShipDate)
+	VALUES
+	  (@custid, GETDATE(), DATEADD(MONTH, 1, GETDATE()))
+	SELECT @firstname AS FirstName, @lastname AS LastName, @Addr AS Addr, @cityname AS City, 'CO' AS St, @postalcode AS Postal
+END
 
 
 

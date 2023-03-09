@@ -22,6 +22,8 @@ GO
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
 
+-- This doesn't run
+-- This doesn't cause issues in the app
 BEGIN TRANSACTION
 -- add new fields
 ALTER TABLE dbo.Customer ADD FirstName VARCHAR(30), LastName VARCHAR(30)
@@ -38,3 +40,8 @@ ALTER TABLE dbo.Customer
 GO
 ROLLBACK
 GO
+
+-- Zero errors
+-- However, the move data might be long.
+-- IF there is another app needing customerName, am I sure it's updated?
+-- Once I do this, I'm stuck.

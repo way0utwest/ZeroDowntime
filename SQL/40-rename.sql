@@ -14,7 +14,9 @@ EXEC sp_rename @objname = 'dbo.OrderHeader.OrderDate' ,
 @objtype = 'column';
 GO
 
+-- CHECK app
 
+-- fix
 EXEC sp_rename @objname = 'dbo.OrderHeader.OrderedbyDate' ,
 @newname = 'OrderDate' ,
 @objtype = 'column';

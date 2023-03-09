@@ -309,3 +309,19 @@ GRANT EXECUTE ON dbo.AddNewOrder TO ClientApp
 GO
 --EXEC dbo.AddNewOrder
 GO
+CREATE OR ALTER PROCEDURE SalesReport
+  @year INT
+AS
+BEGIN
+    DECLARE @start DATETIME, @end DATETIME
+	SELECT @start = DATETIMEFROMPARTS(@year, 1, 1, 1, 1, 0, 0)
+	SELECT @end = DATEADD(YEAR, 1, @start)
+	SELECT count (*) AS SaleCount
+	 FROM dbo.OrderHeader AS oh
+	 WHERE oh.OrderedByDate > @start
+	 AND oh.OrderedByDate < @end
+END
+GO
+GRANT EXECUTE ON dbo.SalesReport TO ClientApp
+GO
+

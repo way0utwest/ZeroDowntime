@@ -18,7 +18,9 @@ ALTER TABLE dbo.OrderHeader
  ModifiedDate DATETIME NOT null
 GO
 -- we can't do this
-
+-- We could add a default
+-- We could use VALUES but potentially locking issues
+-- We also might have more complex decisions on what to do here.
 
 -- Let's add null columns
 ALTER TABLE dbo.OrderHeader
@@ -31,55 +33,12 @@ SELECT TOP 20
 FROM dbo.OrderHeader AS oh
 ORDER BY oh.OrderID desc
 GO
--- Errors and NULLs, so let's fix.
+-- NULLs, so let's fix.
 ALTER TABLE dbo.OrderHeader
  DROP COLUMN CreateDate, ModifiedDate
 GO
 
+-- Check app
 
--- New deployment
-BEGIN TRAN
-GO
-CREATE DEFAULT dbo.CurrentDate AS GETDATE();
-GO
-ALTER TABLE dbo.OrderHeader
- ADD CreateDate DATETIME NULL DEFAULT dbo.CurrentDate, ModifiedDate DATETIME NULL DEFAULT dbo.CurrentDate
-GO
-IF @@ERROR = 0
-	COMMIT
-ELSE 
-	ROLLBACK
-GO
-
-SELECT TOP 20 
-*
-FROM dbo.OrderHeader AS oh
-ORDER BY oh.OrderID desc
-GO
- 
--- inserts are working, but queries are not returning this info
--- what do we do?
--- Let's look at dbop.getOrder
-EXEC dbo.GetOrder @OrderID = 10
-
--- check the code
--- Object Explorer, Modify
-
-
-
-
-
--- let's fix this, expand the *
--- Form is only using the OrderID, OrderDate, Customer Name fields
-ALTER   PROCEDURE [dbo].[GetOrder]
-	@OrderID INT 
-AS
-SELECT o.OrderID
-     , o.OrderDate
-     , c.CustomerName
- FROM dbo.OrderHeader AS o
- INNER JOIN  dbo.Customer AS c ON c.CustomerID = o.CustomerID
- where o.OrderID = @orderID
-
- -- things are working
- -- however, what about the early data?
+-- Let's do this better
+-- Next script
