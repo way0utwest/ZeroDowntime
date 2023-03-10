@@ -53,7 +53,7 @@ BEGIN
 	, @custid int
 	SELECT @firstname = firstname, @lastname = lastname FROM dbo.GetNewName AS gnn
 	SELECT @Addr = gna.Addr FROM dbo.GetNewAddress AS gna
-	SELECT @cityname = CityName FROM dbo.CityName AS cn
+	SELECT @cityname = CityName FROM dbo.GetNewCity AS cn
 	SELECT @postalcode = gnz.Postalcode FROM dbo.GetNewZip AS gnz
 	INSERT dbo.Customer
 	  (FirstName, LastName, CustomerAddress, City, St, zip)
@@ -69,5 +69,13 @@ GO
 
 -- at this point, we can repoint applications to the new column(s)
 
--- check the data
+
+-- stop the app
+-- Find last new customer
+-- check the data, look for this customer.
+-- Note, firstname lastname populated. Customername matches from trigger execution
 SELECT * FROM dbo.Customer AS c
+
+-- Restart app
+-- PRESS Splitname button (move to on)
+

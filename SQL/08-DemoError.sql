@@ -9,7 +9,11 @@ This script
 
 Copyright 2022 Steve Jones
 */
--- remove a needed field
+
+-- Run the app and connect to the db. Click Start 
+-- Watch the logging. No errors.
+
+-- Let's remove a needed field
 ALTER PROCEDURE dbo.GetOrder
 	@OrderID INT 
 AS

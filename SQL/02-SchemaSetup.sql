@@ -270,7 +270,7 @@ BEGIN
 	, @custid int
 	SELECT @custname = PeopleName FROM dbo.GetNewName AS gnn
 	SELECT @Addr = gna.Addr FROM dbo.GetNewAddress AS gna
-	SELECT @cityname = CityName FROM dbo.CityName AS cn
+	SELECT @cityname = CityName FROM dbo.GetNewCity AS cn
 	SELECT @postalcode = gnz.Postalcode FROM dbo.GetNewZip AS gnz
 	INSERT dbo.Customer
 	  (CustomerName, CustomerAddress, City, St, zip)
@@ -318,8 +318,8 @@ BEGIN
 	SELECT @end = DATEADD(YEAR, 1, @start)
 	SELECT count (*) AS SaleCount
 	 FROM dbo.OrderHeader AS oh
-	 WHERE oh.OrderedByDate > @start
-	 AND oh.OrderedByDate < @end
+	 WHERE oh.OrderDate > @start
+	 AND oh.OrderDate < @end
 END
 GO
 GRANT EXECUTE ON dbo.SalesReport TO ClientApp

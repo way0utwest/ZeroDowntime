@@ -32,7 +32,12 @@ BEGIN
 	VALUES
 	  (@custid, @orderdate, @shipdate)
 	SELECT @orderid = SCOPE_IDENTITY()
-	SELECT @orderid AS OrderID, @custid AS CustomerID, @orderdate AS OrderDate, @shipdate AS ShipDate, @orderdate AS OrderedByDate
+	-- add new column to result
+	SELECT @orderid AS OrderID,
+		   @custid AS CustomerID,
+		   @orderdate AS OrderDate,
+		   @shipdate AS ShipDate,
+		   @orderdate AS OrderedByDate;
 END
 GO
 -- fix procedure to use the new column
@@ -67,9 +72,9 @@ GO
 -- check the table
 SELECT TOP 10 * FROM dbo.OrderHeader AS oh
 
-
+-- In app
 -- click "Rename button in client
--- just works
+-- just works, note result name of data changes (OrderDate -> OrderedByDate)
 
 -- cleanup for testing
 --ALTER TABLE dbo.OrderHeader DROP COLUMN OrderedBy

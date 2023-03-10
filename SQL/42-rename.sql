@@ -90,6 +90,20 @@ BEGIN
 	  (@custid, GETDATE(), DATEADD(MONTH, 1, GETDATE()))
 	SELECT @firstname AS FirstName, @lastname AS LastName, @Addr AS Addr, @cityname AS City, 'CO' AS St, @postalcode AS Postal
 END
+GO
+CREATE OR ALTER PROCEDURE SalesReport
+  @year INT
+AS
+BEGIN
+    DECLARE @start DATETIME, @end DATETIME
+	SELECT @start = DATETIMEFROMPARTS(@year, 1, 1, 1, 1, 0, 0)
+	SELECT @end = DATEADD(YEAR, 1, @start)
+	SELECT count (*) AS SaleCount
+	 FROM dbo.OrderHeader AS oh
+	 WHERE oh.OrderedByDate > @start
+	 AND oh.OrderedByDate < @end
+END
+GO
 
 
 

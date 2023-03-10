@@ -9,8 +9,11 @@ Copyright 2022 Steve Jones
 */
 USE ZeroDowntime;
 GO
+-- flip Proc button to "prefer year". This means the proc all:
+-- passes in year value from text box
+-- passes in null values for start and end parameters
 
-CREATE OR ALTER PROCEDURE SalesReport @year  INT = null
+CREATE OR ALTER PROCEDURE SalesReport @year  INT = NULL
                                     , @start DATETIME = NULL
                                     , @end   DATETIME = NULL
 AS
@@ -33,7 +36,7 @@ BEGIN
   END;
   SELECT
     COUNT (*) AS SaleCount
-  , @end AS ReportEnd
+  , @e AS ReportEnd
   FROM dbo.OrderHeader AS oh
   WHERE
     oh.OrderedByDate     > @s
@@ -42,7 +45,9 @@ END;
 GO
 
 -- test this
+-- prefer year
 EXEC dbo.SalesReport 2023;
+-- prefer date
 EXEC dbo.SalesReport 2023, '1996-01-01', '1997-01-01';
 EXEC dbo.SalesReport 2023, '1996-01-01';
 GO
