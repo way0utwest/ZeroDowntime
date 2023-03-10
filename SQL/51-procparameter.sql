@@ -33,6 +33,6 @@ END
 GO
 EXEC dbo.SalesReport 2023
 GO
--- flip Proc button to "using year". This means the proc all:
+-- Proc button is "using year". This means the proc all:
 -- passes in year from year text box
 -- passes in NULL For start and end parameters

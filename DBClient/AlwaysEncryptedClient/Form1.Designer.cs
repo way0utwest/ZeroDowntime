@@ -398,7 +398,7 @@
             // 
             this.txtProc.Location = new System.Drawing.Point(452, 167);
             this.txtProc.Name = "txtProc";
-            this.txtProc.Size = new System.Drawing.Size(64, 20);
+            this.txtProc.Size = new System.Drawing.Size(101, 20);
             this.txtProc.TabIndex = 1008;
             this.txtProc.Text = "Using Year";
             // 

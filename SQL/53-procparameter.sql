@@ -10,7 +10,7 @@ Copyright 2022 Steve Jones
 */
 USE ZeroDowntime;
 GO
-
+-- Flip app to Using DateOnly
 CREATE OR ALTER PROCEDURE SalesReport @start DATETIME = NULL
                                     , @end   DATETIME = NULL
 AS
@@ -43,7 +43,7 @@ GO
 
 -- test this
 EXEC dbo.SalesReport 
-EXEC dbo.SalesReport '1996-01-01'
+EXEC dbo.SalesReport '1996-01-01', '1996/08/01'
 EXEC dbo.SalesReport @start = '1996-01-01';
 EXEC dbo.SalesReport @start = '2023-01-01';
 GO

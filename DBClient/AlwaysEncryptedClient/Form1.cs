@@ -36,7 +36,7 @@ namespace ZeroDowntime
             txtAudit.Text = "Off";
             txtSplit.Text = "Off";
             txtRename.Text = "Off";
-            txtProc.Text = "O";
+            txtProc.Text = "Using Year";
             txtError.Text = iError.ToString();
         }
 
@@ -312,19 +312,19 @@ namespace ZeroDowntime
             {
                 case 0:
                     iProc = 1;
-                    txtProc.Text = "Using Year";
+                    txtProc.Text = "Prefer Year";
                     break;
                 case 1:
                     iProc = 2;
-                    txtProc.Text = "Prefer Year";
+                    txtProc.Text = "Prefer Date";
                     break;
                 case 2:
                     iProc = 3;
-                    txtProc.Text = "Prefer date";
+                    txtProc.Text = "Using Date only";
                     break;
                 case 3:
                     iProc = 0;
-                    txtProc.Text = "Using Date";
+                    txtProc.Text = "Using Year only";
                     break;
             }
         }
