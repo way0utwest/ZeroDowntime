@@ -35,3 +35,5 @@ SELECT o.OrderID, o.CustomerID, o.OrderDate, o.ShipDate, c.CustomerName
  INNER JOIN  dbo.Customer AS c ON c.CustomerID = o.CustomerID
  where o.OrderID = @orderID
 GO
+
+-- reset errors
