@@ -5,10 +5,24 @@ Adding a parameter to a procedure
 
 Let's now make our proc expect the new params and not the old.
 
+Deployment 1
+- add new optional parameters
+- change logic to prefer the new parameter
+
+Deployment 2
+- make the old parameter optional
+- change logic to prefer the new parameter
+
+Deployment 3
+- Remove the old parameter
+- remove logic related to old parameter
+
+
 Copyright 2022 Steve Jones
 */
 USE ZeroDowntime;
 GO
+-- year parameter no longer required
 CREATE OR ALTER PROCEDURE SalesReport @year  INT = NULL
                                     , @start DATETIME = NULL
                                     , @end   DATETIME = NULL
@@ -50,6 +64,7 @@ EXEC dbo.SalesReport 2023, NULL, null
 -- prefer date
 EXEC dbo.SalesReport 2023, '1996-01-01', '1997-01-01';
 EXEC dbo.SalesReport 2023, '1996-01-01';
+EXEC dbo.SalesReport @start = '1996-01-01';
 GO
 
 -- flip Proc button to "prefer date". This means the proc all:

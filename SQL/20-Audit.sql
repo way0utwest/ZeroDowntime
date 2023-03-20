@@ -22,18 +22,24 @@ GO
 -- We could use VALUES but potentially locking issues
 -- We also might have more complex decisions on what to do here.
 
--- Let's add null columns
+-- We could add Not Null columns
 ALTER TABLE dbo.OrderHeader
- ADD CreateDate DATETIME NULL, ModifiedDate DATETIME null
+ADD
+  CreateDate DATETIME NOT NULL DEFAULT GETDATE ()
+, ModifiedDate DATETIME NOT NULL DEFAULT GETDATE ();
 GO
-
 -- check the table
 SELECT TOP 20 
 *
 FROM dbo.OrderHeader AS oh
 ORDER BY oh.OrderID desc
 GO
--- NULLs, so let's fix.
+-- We might not want the dates to be these defaults
+-- We can update over time, but users will see the strange dates while we do
+-- We also don't know our progress if complex logic is used to set a date.
+-- Is it the orderdate? Or is it supposed to be something else?
+
+-- Problems, so let's fix.
 ALTER TABLE dbo.OrderHeader
  DROP COLUMN CreateDate, ModifiedDate
 GO

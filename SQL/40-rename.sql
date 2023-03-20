@@ -8,13 +8,14 @@ This script contains multiple items, each of which may need to be deployed separ
 Copyright 2022 Steve Jones
 */
 
+-- If we try this, we break the app
 -- sp_rename
 EXEC sp_rename @objname = 'dbo.OrderHeader.OrderDate' ,
 @newname = 'OrderedByDate' ,
 @objtype = 'column';
 GO
 
--- CHECK app
+-- Check app
 
 -- fix
 EXEC sp_rename @objname = 'dbo.OrderHeader.OrderedbyDate' ,

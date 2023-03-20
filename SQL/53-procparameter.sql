@@ -3,7 +3,21 @@ Zero Downtime Demos
 
 Adding a parameter to a procedure
 
-Remove the old proc. 
+3 Deployments
+
+Deployment 1
+- add new optional parameters
+- change logic to prefer the new parameter
+
+Deployment 2
+- make the old parameter optional
+- change logic to prefer the new parameter
+
+Deployment 3
+- Remove the old parameter
+- remove logic related to old parameter
+
+
 NOTE: The app must rev first
 
 Copyright 2022 Steve Jones

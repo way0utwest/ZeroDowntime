@@ -3,8 +3,14 @@ Zero Downtime Demos
 
 Rename a column and rename a table
 
-Deployment 1 - Add a new column
+Deployment 1
+- Add a new column
+- adjust code to use the new column, return both
 
+Deployment 2
+- Remove the new column
+- rename the old one
+- adjust code to only use the old column
 
 Copyright 2022 Steve Jones
 */

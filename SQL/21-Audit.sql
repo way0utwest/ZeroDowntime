@@ -3,8 +3,13 @@ Zero Downtime Demos
 
 21 - Adding Auditing Columns NOT NULL
 
-First deployment
-- add the columns
+Deployment 1
+- add new columns as null
+
+Deployment 2
+- Fixes early data
+- Alters code
+- Set columns not null
 
 Copyright 2022 Steve Jones
 */

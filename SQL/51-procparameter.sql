@@ -3,7 +3,19 @@ Zero Downtime Demos
 
 Adding a parameter to a procedure
 
-Let's make a backwards compatible change.
+Let's make a backwards compatible change across 3 deployments
+
+Deployment 1
+- Add new optional parameters
+- change logic to prefer the old parameter
+
+Deployment 2
+- make the old parameter optional
+- change logic to prefer the new parameter
+
+Deployment 3
+- Remove the old parameter
+- remove logic related to old parameter
 
 Copyright 2022 Steve Jones
 */

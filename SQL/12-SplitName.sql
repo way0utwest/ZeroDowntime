@@ -35,6 +35,9 @@ UPDATE dbo.Customer
 GO
 -- fix code
 ALTER VIEW [dbo].[GetNewName]
+/*
+Steve Jones - Updated to return two names, not one
+*/
 AS
     SELECT TOP 1
 		A.firstname,

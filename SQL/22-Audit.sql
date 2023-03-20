@@ -3,9 +3,13 @@ Zero Downtime Demos
 
 20 - Adding Auditing Columns NOT NULL
 
-This script 
+Deployment 1
+- add new columns as null
+
+Deployment 2
 - Fixes early data
 - Alters code
+- Set columns not null
 
 Copyright 2022 Steve Jones
 */
@@ -38,6 +42,7 @@ SELECT o.OrderID
      , c.zip
      , c.FirstName
      , c.LastName
+	 -- new columns
 	 , o.CreateDate
 	 , o.ModifiedDate
  FROM dbo.OrderHeader AS o
@@ -46,5 +51,10 @@ SELECT o.OrderID
 GO
 
 
+ALTER TABLE dbo.OrderHeader ALTER COLUMN CreateDate DATETIME NOT NULL
+ALTER TABLE dbo.OrderHeader ALTER COLUMN ModifiedDate DATETIME NOT NULL
+GO
+
 -- Flip the app toggle
 -- see audit dates appear
+

@@ -28,8 +28,11 @@ GO
 -- deployment 1
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
+
+BEGIN TRAN
+
 -- add new fields
-ALTER TABLE dbo.Customer ADD FirstName VARCHAR(30), LastName VARCHAR(30)
+ALTER TABLE dbo.Customer ADD FirstName VARCHAR(30) NULL, LastName VARCHAR(30) NULL
 GO
 
 -----------------------------------------------------------------------------
@@ -84,6 +87,7 @@ SELECT o.OrderID
      , c.City
      , c.St
      , c.zip
+	 -- new columns added
      , c.FirstName
      , c.LastName
  FROM dbo.OrderHeader AS o
@@ -91,6 +95,7 @@ SELECT o.OrderID
  where o.OrderID = @orderID
 GO
 
+COMMIT
 
 /*
 check the tables

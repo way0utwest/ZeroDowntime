@@ -32,7 +32,9 @@ GO
 UPDATE dbo.Customer
  SET FirstName = SUBSTRING(CustomerName, 1, CHARINDEX(' ', CustomerName)-1)
  , LastName = SUBSTRING(CustomerName,CHARINDEX(' ', CustomerName)+1, LEN(CustomerName) )
--- select * from dbo.Customer
+
+-- STOP RUNNING HERE
+
 GO
 -- remove the old columns
 ALTER TABLE dbo.Customer
