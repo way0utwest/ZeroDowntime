@@ -2,7 +2,7 @@
 
 Zero Downtime Demos
 
-01 - Create database
+99 - DROP database
 
 This script creates a new database and then adds a login and user for the demos.
 A role is created as well for the demos.

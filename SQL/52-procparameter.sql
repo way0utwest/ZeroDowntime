@@ -20,6 +20,13 @@ Deployment 3
 
 Copyright 2022 Steve Jones
 */
+-- ************************************************************************
+-- flip Proc button to "prefer year". This means the app:
+-- passes in year value from text box
+-- passes in null values for start and end parameters
+-- ************************************************************************
+
+
 USE ZeroDowntime;
 GO
 -- year parameter no longer required
@@ -53,9 +60,6 @@ BEGIN
     AND oh.OrderedByDate < @e;
 END;
 GO
--- flip Proc button to "prefer year". This means the proc all:
--- passes in year value from text box
--- passes in null values for start and end parameters
 
 -- test this
 -- prefer year
