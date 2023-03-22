@@ -116,8 +116,8 @@ BEGIN
 	 AND oh.OrderedByDate < @end
 END
 GO
-
-
+-- WE ARE NO LONGER BACKWARDS COMPATIBLE
+-- 
 
 
 

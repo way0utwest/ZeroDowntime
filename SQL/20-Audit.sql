@@ -29,7 +29,7 @@ ADD
 , ModifiedDate DATETIME NOT NULL DEFAULT GETDATE ();
 GO
 -- check the table
-SELECT TOP 20 
+SELECT TOP 20
 *
 FROM dbo.OrderHeader AS oh
 ORDER BY oh.OrderID desc
@@ -40,8 +40,8 @@ GO
 -- Is it the orderdate? Or is it supposed to be something else?
 
 -- Problems, so let's fix.
-ALTER TABLE dbo.OrderHeader DROP CONSTRAINT DF__OrderHead__Creat__5FB337D6
 ALTER TABLE dbo.OrderHeader DROP CONSTRAINT DF__OrderHead__Modif__60A75C0F
+ALTER TABLE dbo.OrderHeader DROP CONSTRAINT DF__OrderHead__Creat__5FB337D6
 GO
 ALTER TABLE dbo.OrderHeader
  DROP COLUMN CreateDate, ModifiedDate
