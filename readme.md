@@ -9,9 +9,9 @@ This location contains a Visual Studio 2019 project that builds a thick client y
 
 You can compile this in VS 2019 and run it. It might work in other versions, but that's the version I've been using.
 
-**Note**: This requires the database and code from the SQL folder.
+**Note**: This requires the database and code from the SQL folder. Before clicking start on the app, the scripts 01 and 02 must be run.
 
-When the app runs, you can start and stop the calls against the database. The default database is ZeroDowntime, and the credentials were mine for a test system. You can enter your own. 
+When the app runs, you can start and stop the calls against the database. The default database is ZeroDowntime, and the credentials were mine for a test system. You can enter your own. These should point to the location where you have executed the SQL scripts 01 and 02.
 
 The encrypted checkbox is for Always Encrypted, but I haven't tested this yet.
 
@@ -34,4 +34,6 @@ In this case, there are 4 modules after the setup. These are designed to be run 
 
 The 01 and 02 files will create a database and set up the objects needed. The 08 is used while the app is running to demo an error.
 
-The other modules follow a format where the first file (10, 20, 30, etc.) is code that might cause errors and downtime. The other files show multiple deployments in a zero downtime process.
+The other modules follow a format where the first file (10, 20, 30, etc.) is code that might cause errors and downtime. The other files show multiple deployments in a zero downtime process. For the first demo, the splitting the name, there are three deployments, which are in files (11, 12, 13).
+
+
