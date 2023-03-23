@@ -39,7 +39,7 @@ GO
  
 -- inserts are working, but queries are not returning this info
 -- what do we do?
--- Let's look at dbop.getOrder
+-- Let's look at dbo.getOrder
 EXEC dbo.GetOrder @OrderID = 10
 
  -- things are working
