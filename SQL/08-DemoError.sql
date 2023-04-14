@@ -13,6 +13,8 @@ Copyright 2022 Steve Jones
 -- Run the app and connect to the db. Click Start 
 -- Watch the logging. No errors.
 
+USE ZeroDowntime
+GO
 -- Let's remove a needed field
 ALTER PROCEDURE dbo.GetOrder
 	@OrderID INT 

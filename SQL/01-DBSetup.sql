@@ -10,7 +10,12 @@ A role is created as well for the demos.
 Copyright 2022 Steve Jones
 */
 -- Create new database
-CREATE DATABASE ZeroDowntime
+USE master
+GO
+IF NOT EXISTS( SELECT [name] FROM sys.databases WHERE [name] = 'ZeroDowntime')
+	CREATE DATABASE ZeroDowntime
+ELSE
+	SELECT 'Run the 99-Cleanup script'
 GO
 IF NOT EXISTS (SELECT * FROM master.sys.server_principals AS sp
  WHERE name = 'ClientUser')

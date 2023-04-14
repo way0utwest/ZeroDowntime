@@ -23,7 +23,7 @@ GO
 -- fix the data
 UPDATE dbo.OrderHeader 
 SET CreateDate = OrderDate
-, ModifiedDate = OrderDate
+, ModifiedDate = ShipDate
 WHERE CreateDate IS NULL
 GO
 -- clean up the proc
@@ -50,7 +50,8 @@ SELECT o.OrderID
  where o.OrderID = @orderID
 GO
 
-
+-- Optional
+-- Deployment 3
 ALTER TABLE dbo.OrderHeader ALTER COLUMN CreateDate DATETIME NOT NULL
 ALTER TABLE dbo.OrderHeader ALTER COLUMN ModifiedDate DATETIME NOT NULL
 GO

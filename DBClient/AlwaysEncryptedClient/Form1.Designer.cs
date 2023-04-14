@@ -79,7 +79,7 @@
             this.txtInstance.Name = "txtInstance";
             this.txtInstance.Size = new System.Drawing.Size(121, 20);
             this.txtInstance.TabIndex = 80;
-            this.txtInstance.Text = ".\\SQL2022";
+            this.txtInstance.Text = ".";
             // 
             // label1
             // 
@@ -156,7 +156,7 @@
             this.groupBox1.Controls.Add(this.txtDB);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(796, 19);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(220, 166);
             this.groupBox1.TabIndex = 8;
@@ -186,7 +186,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(19, 15);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(122, 26);
             this.btnSearch.TabIndex = 110;
@@ -197,7 +197,7 @@
             // btnQuit
             // 
             this.btnQuit.Location = new System.Drawing.Point(309, 15);
-            this.btnQuit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnQuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(119, 23);
             this.btnQuit.TabIndex = 13;
@@ -236,7 +236,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(449, 22);
+            this.label5.Location = new System.Drawing.Point(343, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 164;
@@ -293,7 +293,7 @@
             this.grpAppState.Controls.Add(this.txtSproc);
             this.grpAppState.Controls.Add(this.lblRandom);
             this.grpAppState.Location = new System.Drawing.Point(19, 57);
-            this.grpAppState.Margin = new System.Windows.Forms.Padding(2);
+            this.grpAppState.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpAppState.Name = "grpAppState";
             this.grpAppState.Size = new System.Drawing.Size(291, 128);
             this.grpAppState.TabIndex = 1001;
@@ -376,9 +376,9 @@
             // 
             // btnClearError
             // 
-            this.btnClearError.Location = new System.Drawing.Point(567, 66);
+            this.btnClearError.Location = new System.Drawing.Point(450, 16);
             this.btnClearError.Name = "btnClearError";
-            this.btnClearError.Size = new System.Drawing.Size(115, 26);
+            this.btnClearError.Size = new System.Drawing.Size(93, 22);
             this.btnClearError.TabIndex = 1006;
             this.btnClearError.Text = "Clear Errors";
             this.btnClearError.UseVisualStyleBackColor = true;
@@ -458,7 +458,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 640);
+            this.ClientSize = new System.Drawing.Size(1025, 637);
             this.Controls.Add(this.txtEnd);
             this.Controls.Add(this.txtStart);
             this.Controls.Add(this.label9);

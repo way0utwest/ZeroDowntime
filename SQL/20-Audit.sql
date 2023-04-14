@@ -29,7 +29,7 @@ ADD
 , ModifiedDate DATETIME NOT NULL DEFAULT GETDATE ();
 GO
 -- check the table
-SELECT TOP 20 
+SELECT TOP 20
 *
 FROM dbo.OrderHeader AS oh
 ORDER BY oh.OrderID desc

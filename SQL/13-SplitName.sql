@@ -41,6 +41,7 @@ GO
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
 
+BEGIN tran
 
 
 -- remove the old columns
@@ -95,4 +96,7 @@ BEGIN
 	SELECT @firstname AS FirstName, @lastname AS LastName, @Addr AS Addr, @cityname AS City, 'CO' AS St, @postalcode AS Postal
 END
 GO
+COMMIT
+
+
 -- This should include removing feature flags and code as well from applications

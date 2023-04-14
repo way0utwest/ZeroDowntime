@@ -24,9 +24,15 @@ Copyright 2022 Steve Jones
 */
 USE ZeroDowntime;
 GO
+-- ******************************************************************
+-- ******************************************************************
+-- Prepare for final deployment
 -- Flip app to Using DateOnly
-CREATE OR ALTER PROCEDURE SalesReport @start DATETIME = NULL
-                                    , @end   DATETIME = NULL
+-- ******************************************************************
+-- ******************************************************************
+CREATE OR ALTER PROCEDURE SalesReport
+	@start DATETIME = NULL
+  , @end   DATETIME = NULL
 AS
 BEGIN
   DECLARE

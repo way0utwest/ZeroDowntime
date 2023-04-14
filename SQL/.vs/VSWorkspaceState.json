@@ -2,6 +2,6 @@
   "ExpandedNodes": [
     ""
   ],
-  "SelectedNode": "\\01-DBSetup.sql",
+  "SelectedNode": "\\99-DropDB.sql",
   "PreviewInSolutionExplorer": false
 }
