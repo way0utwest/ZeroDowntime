@@ -26,6 +26,8 @@ SET CreateDate = OrderDate
 , ModifiedDate = ShipDate
 WHERE CreateDate IS NULL
 GO
+BEGIN TRAN
+GO
 -- clean up the proc
 ALTER   PROCEDURE [dbo].[GetOrder]
 	@OrderID INT 
@@ -50,12 +52,21 @@ SELECT o.OrderID
  where o.OrderID = @orderID
 GO
 
+---------------------------------------------------------------------
+---------------------------------------------------------------------
 -- Optional
 -- Deployment 3
+---------------------------------------------------------------------
+---------------------------------------------------------------------
 ALTER TABLE dbo.OrderHeader ALTER COLUMN CreateDate DATETIME NOT NULL
 ALTER TABLE dbo.OrderHeader ALTER COLUMN ModifiedDate DATETIME NOT NULL
 GO
+COMMIT
 
+---------------------------------------------------------------------
+---------------------------------------------------------------------
 -- Flip the app toggle
 -- see audit dates appear
+---------------------------------------------------------------------
+---------------------------------------------------------------------
 

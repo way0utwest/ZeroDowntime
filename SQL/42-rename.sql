@@ -35,11 +35,6 @@ EXEC sp_rename @objname = 'dbo.OrderHeader.OrderDate' ,
 @objtype = 'column';
 GO
 
-IF @@ERROR <> 0
-	ROLLBACK
-ELSE
-	COMMIT
-    
 GO
 -- remove the column from the code
 ALTER PROCEDURE dbo.GetOrder

@@ -40,8 +40,8 @@ GO
 -- Is it the orderdate? Or is it supposed to be something else?
 
 -- Problems, so let's fix.
-ALTER TABLE dbo.OrderHeader DROP CONSTRAINT DF__OrderHead__Creat__5FB337D6
-ALTER TABLE dbo.OrderHeader DROP CONSTRAINT DF__OrderHead__Modif__60A75C0F
+ALTER TABLE dbo.OrderHeader DROP CONSTRAINT DF__OrderHead__Creat__398D8EEE
+ALTER TABLE dbo.OrderHeader DROP CONSTRAINT DF__OrderHead__Modif__3A81B327
 GO
 ALTER TABLE dbo.OrderHeader
  DROP COLUMN CreateDate, ModifiedDate

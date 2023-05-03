@@ -33,6 +33,9 @@ UPDATE dbo.Customer
  , LastName = SUBSTRING(CustomerName,CHARINDEX(' ', CustomerName)+1, LEN(CustomerName) )
 -- select * from dbo.Customer
 GO
+BEGIN TRAN
+GO
+
 -- fix code
 ALTER VIEW [dbo].[GetNewName]
 /*
@@ -69,6 +72,9 @@ BEGIN
 	SELECT @firstname + ' ' + @lastname AS CustomerName, @firstname AS FirstName, @lastname AS LastName, @Addr AS Addr, @cityname AS City, 'CO' AS St, @postalcode AS Postal
 END
 GO
+COMMIT 
+GO
+
 
 -- at this point, we can repoint applications to the new column(s)
 
