@@ -2,9 +2,17 @@
 
 This is a repository for my Architecting Zero Downtime presentation.
 
-There are two main sections of the repo: the client and SQL Code.
+There are two main sections of the repo: the client and SQL Code. There are a few sections in this readme as well:
+- <a href="#pptx">The PowerPoint decks</a>
+- <a href="#client">The PowerPoint decks</a>
+- <a href="#sql">The PowerPoint decks</a>
 
-## DB Client
+If you have questions, suggestions, or comments, feel free to open an issue. If you have improvements, you can try a PR, but if it messes up the talk, I won't accept it.
+
+## <a name="pptx">PowerPoint</a>
+I've included decks in the repo. One is a generic deck. The other is from VS Live Las Vegas 2023.
+
+## <a name="client">DB Client</a>
 This location contains a Visual Studio 2019 project that builds a thick client you can use to connect to a SQL Server instance and continuously run a workload. This workload matches up with the code from the SQL folder.
 
 You can compile this in VS 2019 and run it. It might work in other versions, but that's the version I've been using.
@@ -23,7 +31,7 @@ The four buttons in the middle are designed as feature flags. If these are turne
 
 The three text boxes (year, startdate, enddate) are parameters for the SalesReport stored procedure.
 
-## SQL Code
+## <a name="sql">SQL Code</a>
 This folder contains a number of files. I tend to number in this way:
 - 0x - Setup stuff
 - 1x - Module 1
