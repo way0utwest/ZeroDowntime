@@ -26,8 +26,7 @@ BEGIN TRAN
 -- remove the computed column
 ALTER TABLE dbo.OrderHeader DROP COLUMN OrderedByDate
 
-IF @@ERROR <> 0
-	ROLLBACK
+GO
 
 -- rename the original
 EXEC sp_rename @objname = 'dbo.OrderHeader.OrderDate' ,
@@ -35,7 +34,6 @@ EXEC sp_rename @objname = 'dbo.OrderHeader.OrderDate' ,
 @objtype = 'column';
 GO
 
-GO
 -- remove the column from the code
 ALTER PROCEDURE dbo.GetOrder
 	@OrderID INT 

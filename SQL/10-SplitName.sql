@@ -44,6 +44,6 @@ ROLLBACK
 GO
 
 -- Zero errors
--- However, the move data might be long.
+-- However, the move data might be time consuming.
 -- IF there is another app needing customerName, am I sure it's updated?
 -- Once I do this, I'm stuck.
