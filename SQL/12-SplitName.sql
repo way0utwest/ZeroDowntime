@@ -35,7 +35,7 @@ UPDATE dbo.Customer
 GO
 BEGIN TRAN
 GO
-
+ 
 -- fix code
 ALTER VIEW [dbo].[GetNewName]
 /*
@@ -57,7 +57,8 @@ BEGIN
 	, @cityname VARCHAR(30)
 	, @postalcode VARCHAR(5)
 	, @custid int
-	SELECT @firstname = firstname, @lastname = lastname FROM dbo.GetNewName AS gnn
+	SELECT @firstname = firstname, @lastname = lastname 
+	  FROM dbo.GetNewName AS gnn
 	SELECT @Addr = gna.Addr FROM dbo.GetNewAddress AS gna
 	SELECT @cityname = CityName FROM dbo.GetNewCity AS cn
 	SELECT @postalcode = gnz.Postalcode FROM dbo.GetNewZip AS gnz
@@ -85,6 +86,10 @@ GO
 -- Note, firstname lastname populated. Customername matches from trigger execution
 SELECT * FROM dbo.Customer AS c
 
+---------------------------------------------------
+---------------------------------------------------
 -- Restart app
 -- PRESS Splitname button (move to on)
+---------------------------------------------------
+---------------------------------------------------
 

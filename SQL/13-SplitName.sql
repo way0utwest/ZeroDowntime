@@ -37,12 +37,11 @@ GO
 --                        BEFORE RUNNING THIS!!!!!!!!!!!!!!
 -- ****************************************************************
 -- ****************************************************************
---   Toggle the app feature flag - Split Name
+--   Toggle the app feature flag on - Split Name
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
 
-BEGIN tran
-
+BEGIN TRAN
 
 -- remove the old columns
 ALTER TABLE dbo.Customer

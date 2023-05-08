@@ -32,7 +32,9 @@ GO
 BEGIN TRAN
 
 -- add new fields
-ALTER TABLE dbo.Customer ADD FirstName VARCHAR(30) NULL, LastName VARCHAR(30) NULL
+ALTER TABLE dbo.Customer
+ADD FirstName VARCHAR(30) NULL, 
+    LastName VARCHAR(30) NULL
 GO
 
 -----------------------------------------------------------------------------

@@ -38,6 +38,13 @@ BEGIN
   DECLARE
     @s DATETIME
   , @e DATETIME;
+  -- add logging
+  IF @year IS NOT NULL
+    -- log this somewhere
+	-- insert into logfile (issue, app)
+	--    SELECT 'using year parameter in sales report', app_name()
+	SELECT @s= @s
+
   IF @start IS NULL
   BEGIN
     SELECT @s = DATETIMEFROMPARTS (@year, 1, 1, 1, 1, 0, 0);
