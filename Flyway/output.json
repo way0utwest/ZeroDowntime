@@ -1,0 +1,23 @@
+{
+  "initialSchemaVersion": null,
+  "targetSchemaVersion": "001",
+  "schemaName": "",
+  "migrations": [
+    {
+      "category": "Versioned",
+      "version": "001",
+      "description": "Setup",
+      "type": "SQL_BASELINE",
+      "filepath": "E:\\Documents\\git\\zerodowntime\\Flyway\\migrations\\B001__Setup.sql",
+      "executionTime": 33
+    }
+  ],
+  "migrationsExecuted": 1,
+  "success": true,
+  "flywayVersion": "9.15.2",
+  "database": "ZeroDowntime",
+  "warnings": [
+    "outOfOrder mode is active. Migration of schema [dbo] may not be reproducible."
+  ],
+  "operation": "migrate"
+}

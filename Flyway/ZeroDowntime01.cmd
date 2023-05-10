@@ -14,6 +14,6 @@ echo "role created"
 sqlcmd -S . -E -d ZeroDowntime -Q "ALTER ROLE ClientApp ADD MEMBER ClientUser"
 echo "role altered"
 
-flyway migrate -configFiles="./flyway.conf" -workingDirectory="E:\Documents\git\zerodowntime\Flyway" -url="jdbc:sqlserver://localhost;databaseName=ZeroDowntime;encrypt=true;integratedSecurity=true;trustServerCertificate=true" -enterprise -baselineOnMigrate=true -target=1
+flyway migrate -configFiles="./flyway.conf" -workingDirectory="E:\Documents\git\zerodowntime\Flyway" -url="jdbc:sqlserver://localhost;databaseName=ZeroDowntime;encrypt=true;integratedSecurity=true;trustServerCertificate=true" -enterprise -baselineOnMigrate=true -target=1 -outputType=json -outputFile="output.json" 
 echo "baseline applied"
 
