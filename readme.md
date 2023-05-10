@@ -4,8 +4,8 @@ This is a repository for my Architecting Zero Downtime presentation.
 
 There are two main sections of the repo: the client and SQL Code. There are a few sections in this readme as well:
 - <a href="#pptx">The PowerPoint decks</a>
-- <a href="#client">The PowerPoint decks</a>
-- <a href="#sql">The PowerPoint decks</a>
+- <a href="#client">The DB Client</a>
+- <a href="#sql">The SQL Code</a>
 
 If you have questions, suggestions, or comments, feel free to open an issue. If you have improvements, you can try a PR, but if it messes up the talk, I won't accept it.
 
