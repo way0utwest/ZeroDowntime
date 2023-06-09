@@ -84,7 +84,7 @@ GO
 -- Find last new customer
 -- check the data, look for this customer.
 -- Note, firstname lastname populated. Customername matches from trigger execution
-SELECT * FROM dbo.Customer AS c
+SELECT top 2 * FROM dbo.Customer AS c ORDER BY customerID desc
 
 ---------------------------------------------------
 ---------------------------------------------------
@@ -92,4 +92,4 @@ SELECT * FROM dbo.Customer AS c
 -- PRESS Splitname button (move to on)
 ---------------------------------------------------
 ---------------------------------------------------
-
+SELECT  'Flip Splitname toggle'

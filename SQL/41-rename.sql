@@ -84,3 +84,4 @@ SELECT TOP 10 * FROM dbo.OrderHeader AS oh
 
 -- cleanup for testing
 --ALTER TABLE dbo.OrderHeader DROP COLUMN OrderedBy
+SELECT 'Flip Rename Toggle'

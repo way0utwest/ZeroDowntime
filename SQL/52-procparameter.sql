@@ -74,11 +74,11 @@ EXEC dbo.SalesReport 2023;
 EXEC dbo.SalesReport 2023, NULL, null
 -- prefer date
 EXEC dbo.SalesReport 2023, '1996-01-01', '1997-01-01';
-EXEC dbo.SalesReport 2023, '1996-01-01';
--- DO THIS FOR CALLS
-EXEC dbo.SalesReport @start = '1996-01-01';
+--EXEC dbo.SalesReport 2023, '1996-01-01';
+--EXEC dbo.SalesReport @start = '1996-01-01';
 GO
 
 -- flip Proc button to "prefer date". This means the proc all:
 -- passes in null for year value 
 -- passes in textbox values for start and end parameters
+SELECT 'Flip Toggle to Prefer Date'

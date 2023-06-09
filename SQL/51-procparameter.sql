@@ -48,3 +48,5 @@ GO
 -- Proc button is "using year". This means the proc all:
 -- passes in year from year text box
 -- passes in NULL For start and end parameters
+SELECT 'Flip Proc toggle to Prefer Year'
+GO
