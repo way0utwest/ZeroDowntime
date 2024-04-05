@@ -14,7 +14,8 @@ Deployment 2
 
 Copyright 2022 Steve Jones
 */
-
+USE ZeroDowntime
+go
 BEGIN TRANSACTION
 -- add a new column
 -- computed, no space needed
