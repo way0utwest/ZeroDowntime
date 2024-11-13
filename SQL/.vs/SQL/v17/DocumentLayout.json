@@ -1,0 +1,84 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Documents\\git\\zerodowntime\\SQL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Documents\\SQL Server Management Studio\\SQLQuery4.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Documents\\SQL Server Management Studio\\SQLQuery3.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Documents\\SQL Server Management Studio\\SQLQuery2.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Documents\\SQL Server Management Studio\\SQLQuery1.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3eb44d79-dda1-4580-b810-0808975173e4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SQLQuery4.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (68))",
+              "DocumentMoniker": "E:\\Documents\\SQL Server Management Studio\\SQLQuery4.sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\SQL Server Management Studio\\SQLQuery4.sql",
+              "ToolTip": "E:\\Documents\\SQL Server Management Studio\\SQLQuery4.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (68))",
+              "RelativeToolTip": "..\\..\\..\\SQL Server Management Studio\\SQLQuery4.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (68))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-13T18:40:48.277Z",
+              "EditorCaption": " - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (68))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SQLQuery3.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (67))",
+              "DocumentMoniker": "E:\\Documents\\SQL Server Management Studio\\SQLQuery3.sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\SQL Server Management Studio\\SQLQuery3.sql",
+              "ToolTip": "E:\\Documents\\SQL Server Management Studio\\SQLQuery3.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (67))",
+              "RelativeToolTip": "..\\..\\..\\SQL Server Management Studio\\SQLQuery3.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (67))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-13T18:40:47.614Z",
+              "EditorCaption": " - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (67))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SQLQuery2.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (65))",
+              "DocumentMoniker": "E:\\Documents\\SQL Server Management Studio\\SQLQuery2.sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\SQL Server Management Studio\\SQLQuery2.sql",
+              "ToolTip": "E:\\Documents\\SQL Server Management Studio\\SQLQuery2.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (65))",
+              "RelativeToolTip": "..\\..\\..\\SQL Server Management Studio\\SQLQuery2.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (65))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-13T18:40:46.981Z",
+              "EditorCaption": " - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (65))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SQLQuery1.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (64))",
+              "DocumentMoniker": "E:\\Documents\\SQL Server Management Studio\\SQLQuery1.sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\SQL Server Management Studio\\SQLQuery1.sql",
+              "ToolTip": "E:\\Documents\\SQL Server Management Studio\\SQLQuery1.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (64))",
+              "RelativeToolTip": "..\\..\\..\\SQL Server Management Studio\\SQLQuery1.sql - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (64))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-13T18:40:46.383Z",
+              "EditorCaption": " - ARISTOTLE\\SQL2022.Sandbox (ARISTOTLE\\Steve (64))"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
