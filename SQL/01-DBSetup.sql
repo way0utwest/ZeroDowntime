@@ -7,7 +7,7 @@ Zero Downtime Demos
 This script creates a new database and then adds a login and user for the demos.
 A role is created as well for the demos.
 
-Copyright 2022 Steve Jones
+Copyright 2022-2024 Steve Jones
 */
 -- Create new database
 USE master
