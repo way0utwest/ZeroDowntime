@@ -25,8 +25,11 @@ GO
 -- We could add Not Null columns
 ALTER TABLE dbo.OrderHeader
 ADD
-  CreateDate DATETIME NOT NULL DEFAULT GETDATE ()
-, ModifiedDate DATETIME NOT NULL DEFAULT GETDATE ();
+  CreateDate DATETIME NOT NULL CONSTRAINT DF_Getdate DEFAULT GETDATE ()
+GO
+ALTER TABLE dbo.OrderHeader
+ADD
+  ModifiedDate DATETIME NOT NULL CONSTRAINT DF_GetDateMod DEFAULT GETDATE();
 GO
 -- check the table
 SELECT TOP 20
@@ -40,8 +43,9 @@ GO
 -- Is it the orderdate? Or is it supposed to be something else?
 
 -- Problems, so let's fix.
-ALTER TABLE dbo.OrderHeader DROP CONSTRAINT DF__OrderHead__Creat__619B8048
-ALTER TABLE dbo.OrderHeader DROP CONSTRAINT DF__OrderHead__Modif__628FA481
+ALTER TABLE dbo.OrderHeader DROP CONSTRAINT DF_Getdate
+go
+ALTER TABLE dbo.OrderHeader DROP CONSTRAINT DF_GetdateMod
 GO
 ALTER TABLE dbo.OrderHeader
  DROP COLUMN CreateDate, ModifiedDate
